@@ -3,12 +3,23 @@
     <head>
         <title>Advanced Topics in Human-Centered Computing</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script type="text/javascript">
+        function infofunc(){
+            var w = window.outerWidth;
+            alert(window.devicePixelRatio);
+            alert(window.innerWidth);
+            alert(w);
+            // style="width:1080px,height:1920px"
+            // window.outerWidth=1080;
+            //width=device-width
+        }
+        </script>
         <script src="js/p5.js"></script>
         <script src="js/p5.dom.js"></script>
+        <script src="js/jquery.js"></script>
         <script src="js/app.js"></script>
-        <meta
-     name='viewport'
-     content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+        <meta name='viewport' content="width=device-width,shrink-to-fit=0,initial-scale=1, maximum-scale=1,user-scalable=no" />
+        <!-- <meta name="viewport" content="shrink-to-fit=0"> -->
     </head>
     <body>
         <div id="sketch-holder"></div>
