@@ -28,11 +28,6 @@ var dspWidth;
 var dspHeight;
 
 
-// var fs=false;
-// document.addEventListener('touchmove', function (event) {
-//   if (event.scale !== 1) { event.preventDefault(); }
-// }, false);
-
 var tblock = function (e) {
     if (e.touches.length > 1) {
         e.preventDefault()
@@ -43,14 +38,26 @@ var tblock = function (e) {
 
 document.addEventListener("touchmove", tblock, true);
 
-// var lastTouchEnd = 0;
-// document.addEventListener('touchend', function (event) {
-//   var now = (new Date()).getTime();
-//   if (now - lastTouchEnd <= 300) {
-//     event.preventDefault();
-//   }
-//   lastTouchEnd = now;
-// }, false);
+function shuffle(array) {
+    let counter = array.length;
+
+    // While there are elements in the array
+    while (counter > 0) {
+        // Pick a random index
+        let index = Math.floor(Math.random() * counter);
+
+        // Decrease counter by 1
+        counter--;
+
+        // And swap the last element with it
+        let temp = array[counter];
+        array[counter] = array[index];
+        array[index] = temp;
+    }
+
+    return array;
+}
+
 
 function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
@@ -92,6 +99,7 @@ function initArray(){
         {x:getRandomArbitrary(0,dspWidth)
         ,y:getRandomArbitrary(0,dspHeight)})
   }
+  pointList = shuffle(pointList);
 }
 
 function setup() {
